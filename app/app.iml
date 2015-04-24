@@ -90,6 +90,7 @@
     <orderEntry type="library" exported="" name="android-support-v4" level="project" />
     <orderEntry type="library" exported="" name="kotlin-android-extensions-0.11.91.1" level="project" />
     <orderEntry type="library" exported="" name="kotlin-runtime-0.11.91.2" level="project" />
+    <orderEntry type="library" exported="" name="anko-0.5-15" level="project" />
     <orderEntry type="library" exported="" name="kotlin-stdlib-0.11.91.2" level="project" />
   </component>
 </module>

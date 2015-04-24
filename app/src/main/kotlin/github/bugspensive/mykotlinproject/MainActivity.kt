@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import kotlinx.android.anko.toast
 import kotlinx.android.synthetic.activity_main.*
 
 open class MainActivity : Activity() {
@@ -41,7 +42,7 @@ open class MainActivity : Activity() {
             else -> myBoolean = false
         }
         if(updateUI())
-            Toast.makeText(getApplicationContext(),getResources().getString(R.string.ui_updated),Toast.LENGTH_SHORT).show()
+            getApplicationContext().toast(R.string.ui_updated)
         return super.onMenuItemSelected(featureId, item)
     }
 
