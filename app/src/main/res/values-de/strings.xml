@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mein Kotlin Projekt</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_add">Hinzufügen</string>
+    <string name="action_delete">Löschen</string>
+    <string name="my_button">Meine Schaltfläche</string>
+    <string name="not_my_button">Nicht meine Schaltfläche</string>
+    <string name="ui_updated">Benutzer Oberfläche aktualisiert</string>
+</resources>
