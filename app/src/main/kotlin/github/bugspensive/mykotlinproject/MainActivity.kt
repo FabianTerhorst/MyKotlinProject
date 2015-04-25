@@ -8,26 +8,27 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
-import kotlinx.android.anko.toast
-import kotlinx.android.synthetic.activity_main.*
+import kotlinx.android.anko.*
 
 open class MainActivity : Activity() {
 
     var myBoolean: Boolean = true
 
     protected override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        MyTextView.setText(getResources().getString(R.string.activity))
-        updateUI()
-        var next: Button = findViewById(R.id.MyButton) as Button
-        next.setOnClickListener(object : View.OnClickListener {
-            public override fun onClick(view: View) {
-                val intent: Intent = Intent()
-                setResult(Activity.RESULT_OK, intent)
-                finish()
+        super<Activity>.onCreate(savedInstanceState)
+        verticalLayout {
+            padding = dip(30)
+            val name = editText()
+            button("Say Hello") {
+                onClick { toast("Hello, ${name.text}!") }
             }
-        })
+            val mybutton = button()
+            mybutton.textSize = 18f
+            mybutton.id = R.id.my_button
+        }
+
+        updateUI();
+
     }
 
     public override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -47,8 +48,9 @@ open class MainActivity : Activity() {
     }
 
     fun updateUI() : Boolean{
+        val button = find<Button>(R.id.my_button)
         var buttonText: String = getResources().getString(if(myBoolean){R.string.my_button}else{R.string.not_my_button})
-        MyButton.setText(buttonText)
-        return MyButton.getText() == buttonText
+        button.setText(buttonText)
+        return button.getText() == buttonText
     }
 }
